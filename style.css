@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(45deg, #321493, #1e1e1e);
+    color: #fff;
+    min-height: 100vh;
+}
+
+header {
+    align-items: center;
+    justify-content: space-between;
+    background: #825cff;
+    padding: 10px 20px;
+    font-size: larger;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3.0em;
+    margin: 0;
+    text-align: center;
+}
+
+/* Container principal que junta a foto e os textos */
+.perfil-container {
+display: flex;
+align-items: flex-start;
+  gap: 40px; /* Cria um espaço saudável entre a foto e o texto */
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+  font-family: Arial, sans-serif; /* Torna a leitura mais agradável */
+}
+
+/* Área da foto */
+.perfil-foto {
+  flex: 0 0 350px; /* Define um tamanho fixo maior para a largura da foto (ex: 350px) */
+}
+
+.perfil-foto img {
+width: 100%;
+height: auto;
+  border-radius: 10px; /* Opcional: deixa os cantos da foto arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: dá um leve destaque na foto */
+}
+
+/* Área do conteúdo de texto */
+.perfil-conteudo {
+  flex: 1; /* Faz o texto ocupar o restante do espaço disponível */
+}
+
+.perfil-conteudo h1 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+color: #f5f5f5;
+}
+
+.perfil-conteudo h2 {
+font-size: 1.5rem;
+margin-top: 20px;
+margin-bottom: 10px;
+  color: #fefefe; /* Cor roxa parecida com a do seu fundo atual */
+}
+
+.perfil-conteudo p, .perfil-conteudo li {
+font-size: 1.1rem;
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas para melhorar a leitura */
+color: #f6f5f5;
+}
+
+.perfil-conteudo ul {
+  list-style-type: none; /* Remove as bolinhas padrão da lista se preferir */
+padding-left: 0;
+}
+
+/* Responsividade: se a tela for pequena (celular), a foto fica no topo e o texto embaixo */
+@media (max-width: 768px) {
+.perfil-container {
+    flex-direction: column;
+    align-items: center;
+}
+.perfil-foto {
+    flex: 0 0 auto;
+    width: 80%; /* Foto se adapta ao tamanho da tela do celular */
+    max-width: 300px;
+}
+}
+
+.perfil-container {
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para destacar o conteúdo */
+  padding: 20px;
+  border-radius: 10px; /* Cantos arredondados para um visual mais moderno */
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #825cff;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+}

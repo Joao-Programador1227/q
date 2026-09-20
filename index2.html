@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projeto 1</title>
+        <link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <header>
+            <h1>Quiz de Conhecimentos Envolvendo João Pedro Amorim De Sousa</h1>
+        </header>
+        <main>
+            <section>
+                <h2>Pergunta 1</h2>
+                <p>Qual é a idade de João Pedro Amorim De Sousa?</p>
+                <ul>
+                    <li><input type="radio" name="q1" value="14"> 14 anos</li>
+                    <li><input type="radio" name="q1" value="15"> 15 anos</li>
+                    <li><input type="radio" name="q1" value="16"> 16 anos</li>
+                    <li><input type="radio" name="q1" value="17"> 17 anos</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Pergunta 2</h2>
+                <p>Qual é o local de nascimento de João Pedro Amorim De Sousa?</p>
+                <ul>
+                    <li><input type="radio" name="q2" value="Bahia"> Bahia</li>
+                    <li><input type="radio" name="q2" value="São Paulo"> São Paulo</li>
+                    <li><input type="radio" name="q2" value="Ceará"> Ceará</li>
+                    <li><input type="radio" name="q2" value="Rio de Janeiro"> Rio de Janeiro</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Pergunta 3</h2>
+                <p>Qual é o estado civil de João Pedro Amorim De Sousa?</p>
+                <ul>
+                    <li><input type="radio" name="q3" value="Solteiro"> Solteiro</li>
+                    <li><input type="radio" name="q3" value="Namorando"> Namorando</li>
+                    <li><input type="radio" name="q3" value="Casado"> Casado</li>
+                    <li><input type="radio" name="q3" value="Divorciado"> Divorciado</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Pergunta 4</h2>
+                <p>Qual é o curso técnico que João Pedro Amorim De Sousa está cursando?</p>
+                <ul>
+                    <li><input type="radio" name="q4" value="Desenvolvimento de Sistemas"> Desenvolvimento de Sistemas</li>
+                    <li><input type="radio" name="q4" value="Ti"> Desenvolvimento de Software</li>
+                    <li><input type="radio" name="q4" value="Administração"> Administração</li>
+                    <li><input type="radio" name="q4" value="Enfermagem"> Enfermagem</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Pergunta 5</h2>
+                <p>Qual é o objetivo futuro de João Pedro Amorim De Sousa?</p>
+                <ul>
+                    <li><input type="radio" name="q5" value="Seguir carreira na área de desenvolvimento de software e ter uma empresa própria"> Seguir carreira na área de desenvolvimento de software e ter uma empresa própria</li>
+                    <li><input type="radio" name="q5" value="Seguir carreira na área de engenharia"> Seguir carreira na área de engenharia</li>
+                    <li><input type="radio" name="q5" value="Seguir carreira na área de medicina"> Seguir carreira na área de medicina</li>
+                    <li><input type="radio" name="q5" value="Seguir carreira na área de direito"> Seguir carreira na área de direito</li>
+                </ul>
+            </section>
+            <button onclick="verificarRespostas()">Enviar Respostas</button>
+            <p id="resultado"></p>
+            <script>
+function verificarRespostas() {
+    const respostasCorretas = [
+        "16",
+        "Ceará",
+        "Solteiro",
+        "Desenvolvimento de Sistemas",
+        "Seguir carreira na área de desenvolvimento de software e ter uma empresa própria"
+    ];
+
+    let pontuacao = 0;
+    let naoRespondidas = 0;
+
+    respostasCorretas.forEach((resposta, index) => {
+        const inputSelecionado = document.querySelector(`input[name="q${index + 1}"]:checked`);
+        
+        if (!inputSelecionado) {
+            naoRespondidas++;
+            return;
+        }
+
+        // Normaliza para evitar erros por espaços ou maiúsculas/minúsculas
+        if (inputSelecionado.value.trim().toLowerCase() === resposta.trim().toLowerCase()) {
+            pontuacao++;
+        }
+    });
+
+    const resultado = document.getElementById("resultado");
+    resultado.textContent = `Você acertou ${pontuacao} de ${respostasCorretas.length} perguntas.`;
+}
+</script>
+        </main>
+    </body>
+</html>
